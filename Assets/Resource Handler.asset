@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6b66c8814513043b9c7728d01e1530, type: 3}
   m_Name: Resource Handler
   m_EditorClassIdentifier: 
-  _wood: 190
+  _wood: 0
   _gold: 0
