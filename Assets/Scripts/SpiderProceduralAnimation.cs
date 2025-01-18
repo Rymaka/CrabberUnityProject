@@ -9,6 +9,7 @@ public class SpiderProceduralAnimation : MonoBehaviour
     [SerializeField] private float stepHeight = 0.15f;
     [SerializeField] private float sphereCastRadius = 0.125f;
     [SerializeField] private bool bodyOrientation = false;
+    [SerializeField] private LayerMask _raycastLayers;
 
     [SerializeField] private float raycastRange = 1.5f;
     private Vector3[] defaultLegPositions;
@@ -30,7 +31,7 @@ public class SpiderProceduralAnimation : MonoBehaviour
         RaycastHit hit;
         var ray = new Ray(point + halfRange * up / 2f, -up);
 
-        if (Physics.SphereCast(ray, sphereCastRadius, out hit, 2f * halfRange))
+        if (Physics.SphereCast(ray, sphereCastRadius, out hit, 2f * halfRange, _raycastLayers))
         {
             res[0] = hit.point;
             res[1] = hit.normal;

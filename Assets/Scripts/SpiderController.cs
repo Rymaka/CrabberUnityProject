@@ -8,6 +8,7 @@ public class SpiderController : MonoBehaviour
     [SerializeField] private float raysEccentricity = 0.2f;
     [SerializeField] private float outerRaysOffset = 2f;
     [SerializeField] private float innerRaysOffset = 25f;
+    [SerializeField] private LayerMask raycastLayers;
 
     private Vector3 velocity;
     private Vector3 lastVelocity;
@@ -18,7 +19,7 @@ public class SpiderController : MonoBehaviour
     private Vector3[] pn;
 
     private static Vector3[] GetClosestPoint(Vector3 point, Vector3 forward, Vector3 up, float halfRange,
-        float eccentricity, float offset1, float offset2, int rayAmount)
+        float eccentricity, float offset1, float offset2, int rayAmount, LayerMask raycastLayers)
     {
         var result = new Vector3[2] { point, up };
         var right = Vector3.Cross(up, forward);
@@ -38,8 +39,9 @@ public class SpiderController : MonoBehaviour
         {
             RaycastHit hit;
             var largener = Vector3.ProjectOnPlane(dir, up);
+
             var ray = new Ray(point - (dir + largener) * halfRange + largener.normalized * offset1 / 100f, dir);
-            if (Physics.SphereCast(ray, 0.01f, out hit, 2f * halfRange))
+            if (Physics.SphereCast(ray, 0.01f, out hit, 2f * halfRange, raycastLayers))
             {
                 result[0] += hit.point;
                 result[1] += hit.normal;
@@ -48,7 +50,7 @@ public class SpiderController : MonoBehaviour
             }
 
             ray = new Ray(point - (dir + largener) * halfRange + largener.normalized * offset2 / 100f, dir);
-            if (Physics.SphereCast(ray, 0.01f, out hit, 2f * halfRange))
+            if (Physics.SphereCast(ray, 0.01f, out hit, 2f * halfRange, raycastLayers))
             {
                 result[0] += hit.point;
                 result[1] += hit.normal;
@@ -78,7 +80,7 @@ public class SpiderController : MonoBehaviour
         lastPosition = transform.position;
         lastVelocity = velocity;
 
-        //TODO: Remake this controller to mobile gamepad style + PC (WASD) with unity new input system
+        // TODO: Remake this controller to mobile gamepad style + PC (WASD) with Unity new input system
         var valueY = Input.GetAxis("Vertical");
         if (valueY != 0)
             transform.position += transform.forward * valueY * _speed * Time.fixedDeltaTime;
@@ -89,10 +91,11 @@ public class SpiderController : MonoBehaviour
 
         if (valueX != 0 || valueY != 0)
         {
-            pn = GetClosestPoint(transform.position, transform.forward, transform.up, 0.5f, 0.1f, 30, -30, 4);
+            pn = GetClosestPoint(transform.position, transform.forward, transform.up, 0.5f, 0.1f, 30, -30, 4,
+                raycastLayers);
             upward = pn[1];
             var position = GetClosestPoint(transform.position, transform.forward, transform.up, 0.5f, raysEccentricity,
-                innerRaysOffset, outerRaysOffset, raysNb);
+                innerRaysOffset, outerRaysOffset, raysNb, raycastLayers);
             transform.position = Vector3.Lerp(lastPosition, position[0], 1f / (1f + smoothness));
 
             forward = velocity.normalized;
