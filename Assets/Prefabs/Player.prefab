@@ -678,6 +678,8 @@ GameObject:
   - component: {fileID: 432238606763253190}
   - component: {fileID: 4608672999978842286}
   - component: {fileID: 3318283218461354321}
+  - component: {fileID: 88656122651330951}
+  - component: {fileID: 5784433223054678502}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -768,6 +770,38 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0.16, z: 0}
+--- !u!114 &88656122651330951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952563662427007546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660ef2a68693d504aa15703303e8bb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 5
+  _health: 5
+  _hpText: {fileID: 0}
+  _HPSlider: {fileID: 0}
+--- !u!114 &5784433223054678502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952563662427007546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149d9cfb4ebf3974eae1256362e5a76e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _woodTag: Wood
+  _damagePerSec: 50
+  _playerScript: {fileID: 432238606763253190}
+  _playerSpeedInTree: 2
 --- !u!1 &5091838419268205558
 GameObject:
   m_ObjectHideFlags: 0

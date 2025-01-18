@@ -2,7 +2,7 @@
 
 public class SpiderController : MonoBehaviour
 {
-    [SerializeField] private float _speed = 3f;
+    public float _speed = 3f;
     [SerializeField] private float smoothness = 5f;
     [SerializeField] private int raysNb = 8;
     [SerializeField] private float raysEccentricity = 0.2f;
