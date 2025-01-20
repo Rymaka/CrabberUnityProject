@@ -5,7 +5,7 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
     [SerializeField] private Rigidbody _rb;
-    [SerializeField] private int _damage = 1;
+    public int _damage = 1;
     [SerializeField] private float _deathTimer = 7f;
 
     private void Awake()

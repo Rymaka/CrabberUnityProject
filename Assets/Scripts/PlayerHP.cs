@@ -7,6 +7,7 @@ public class PlayerHP : HealthController
     [SerializeField] private TextMeshProUGUI _hpText;
     [SerializeField] private Slider _HPSlider;
     private float _hpRatio;
+    public float bonusDamage;
 
     protected override void OnAwake()
     {
@@ -17,7 +18,7 @@ public class PlayerHP : HealthController
 
     public override void TakeDamage(float damage)
     {
-        base.TakeDamage(damage);
+        base.TakeDamage(damage + bonusDamage);
         _hpText.text = _health.ToString() + "/" + _maxHealth.ToString();
         UpdateHPRatio();
     }

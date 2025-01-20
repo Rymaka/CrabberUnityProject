@@ -6,6 +6,7 @@ public class ResourceFarm : MonoBehaviour
     [SerializeField] private float _damagePerSec = 50f;
     [SerializeField] private SpiderController _playerScript;
     [SerializeField] private float _playerSpeedInTree;
+    [SerializeField] private float _bonusTree;
     private float _initalSpeed;
 
     private void Start()
