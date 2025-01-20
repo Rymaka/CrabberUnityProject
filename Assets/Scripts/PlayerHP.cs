@@ -11,22 +11,27 @@ public class PlayerHP : HealthController
     protected override void OnAwake()
     {
         base.OnAwake();
-        _hpRatio = _health / _maxHealth;
         _hpText.text = _health.ToString() + "/" + _maxHealth.ToString();
-        _HPSlider.value = _hpRatio;
+        UpdateHPRatio();
     }
 
     public override void TakeDamage(float damage)
     {
         base.TakeDamage(damage);
         _hpText.text = _health.ToString() + "/" + _maxHealth.ToString();
-        _HPSlider.value = _hpRatio;
+        UpdateHPRatio();
     }
 
     public override void GetHeal(float damage)
     {
         base.GetHeal(damage);
         _hpText.text = _health.ToString() + "/" + _maxHealth.ToString();
+        UpdateHPRatio();
+    }
+
+    private void UpdateHPRatio()
+    {
+        _hpRatio = _health / _maxHealth;
         _HPSlider.value = _hpRatio;
     }
 }
