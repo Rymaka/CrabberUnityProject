@@ -743,6 +743,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1652380692}
   m_SourcePrefab: {fileID: 100100000, guid: 26b9949f52b45d64b912230d2c466879, type: 3}
+--- !u!114 &92560862 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 432238606763253190, guid: 26b9949f52b45d64b912230d2c466879, type: 3}
+  m_PrefabInstance: {fileID: 92560861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652380677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c97196b76ba904d8b19d79f137976d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &96394959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7685,15 +7696,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985a05d844f527f46978a073cbe8a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statsHandler: {fileID: 0}
-  _player: {fileID: 0}
-  _resourceHandler: {fileID: 0}
+  _statsHandler: {fileID: 11400000, guid: 56a11a480f364a54cbb0dbd5b2717363, type: 2}
+  _player: {fileID: 92560862}
+  _resourceHandler: {fileID: 11400000, guid: 7eb1f71906a682a4385950a4d1a7e284, type: 2}
   bonusAttackSpeed: 0
   bonusDamage: 0
   enemyBonusDamage: 0
   additionalPlayerSize: 0
   bounceImmune: 0
-  _turretController: {fileID: 0}
+  _turretController: {fileID: 1511436989}
 --- !u!1001 &1705358607
 PrefabInstance:
   m_ObjectHideFlags: 0
