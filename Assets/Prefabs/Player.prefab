@@ -684,6 +684,8 @@ GameObject:
   - component: {fileID: 88656122651330951}
   - component: {fileID: 5784433223054678502}
   - component: {fileID: 7240204856221879331}
+  - component: {fileID: 7904713779913450551}
+  - component: {fileID: 4241262295997640121}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -719,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c97196b76ba904d8b19d79f137976d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  speed: 3
   smoothness: 5
   raysNb: 8
   raysEccentricity: 0.2
@@ -792,6 +794,7 @@ MonoBehaviour:
   _health: 5
   _hpText: {fileID: 0}
   _HPSlider: {fileID: 0}
+  bonusDamage: 0
 --- !u!114 &5784433223054678502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,6 +811,7 @@ MonoBehaviour:
   _damagePerSec: 50
   _playerScript: {fileID: 432238606763253190}
   _playerSpeedInTree: 2
+  _bonusTree: 0
 --- !u!114 &7240204856221879331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,6 +824,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0e461d5d255a84e9c45995f6b9f61c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7904713779913450551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952563662427007546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 24d57e95a232c794a8d51f2506ef00c3, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 432238606763253190}
+        m_TargetAssemblyTypeName: SpiderController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b8a2a877-0648-4bb1-8f0a-38804bb17524
+    m_ActionName: Gameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &4241262295997640121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952563662427007546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985a05d844f527f46978a073cbe8a2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statsHandler: {fileID: 11400000, guid: 56a11a480f364a54cbb0dbd5b2717363, type: 2}
+  _player: {fileID: 432238606763253190}
+  _resourceHandler: {fileID: 11400000, guid: 7eb1f71906a682a4385950a4d1a7e284, type: 2}
+  bonusAttackSpeed: 0
+  bonusDamage: 0
+  enemyBonusDamage: 0
+  additionalPlayerSize: 0
+  bounceImmune: 0
+  _turretController: {fileID: 0}
 --- !u!1 &5091838419268205558
 GameObject:
   m_ObjectHideFlags: 0

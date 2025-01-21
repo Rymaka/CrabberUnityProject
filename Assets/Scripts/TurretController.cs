@@ -45,8 +45,11 @@ public class TurretController : MonoBehaviour
             if (Vector3.Distance(_closestEnemy.transform.position, transform.position) <= _maxRange)
             {
                 Instantiate(_bullet, _shootingPoint.position, _shootingPoint.rotation);
-                var bc = _bullet.GetComponent<BulletController>();
-                bc._damage += _additionalDamage;
+                if (_additionalDamage != 0)
+                {
+                    var bc = _bullet.GetComponent<BulletController>();
+                    bc._damage += _additionalDamage;
+                }
                 _isCD = true;
                 StartCoroutine(Cooldown());
             }

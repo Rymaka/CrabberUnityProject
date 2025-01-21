@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd52e8e5f0080b24eae46446b9f25379, type: 3}
   m_Name: Stats Handler
   m_EditorClassIdentifier: 
-  playerDamage: 3
-  attackSpeed: 3
+  bonusPlayerDamage: 0
+  bonusAttackSpeed: 0
   moveSpeed: 7
   size: 1
+  enemyBonusDamage: 1
+  bonusWood: 0
   bounceImmune: 0

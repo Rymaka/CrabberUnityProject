@@ -13,17 +13,17 @@ public class PlayerStatsController : MonoBehaviour
     [SerializeField] private TurretController _turretController;
     private SpiderController _playerController;
     private PlayerHP _playerHP;
-    private void Awake()
+    private void Start()
     {
-        ReloadStats();
         _playerController = _player.GetComponent<SpiderController>();
         _playerHP = _player.GetComponent<PlayerHP>();
+        ReloadStats();
     }
     
     public void ReloadStats()
     {
-        bonusAttackSpeed = _statsHandler.attackSpeed;
-        bonusDamage = _statsHandler.playerDamage;
+        bonusAttackSpeed = _statsHandler.bonusAttackSpeed;
+        bonusDamage = _statsHandler.bonusPlayerDamage;
         enemyBonusDamage = _statsHandler.enemyBonusDamage;
         additionalPlayerSize = _statsHandler.size;
         bounceImmune = _statsHandler.bounceImmune;
@@ -33,20 +33,20 @@ public class PlayerStatsController : MonoBehaviour
     public void ApplyBonusStats()
     {
         _turretController.AddBonusStats();
-        _playerController._speed = _statsHandler.moveSpeed;
+        _playerController.speed = _statsHandler.moveSpeed;
         _resourceHandler.bonusWood = _statsHandler.bonusWood;
         _playerHP.bonusDamage = enemyBonusDamage;
     }
 
     public void AddPlayerDamage(int damage)
     {
-        _statsHandler.playerDamage += damage;
+        _statsHandler.bonusPlayerDamage += damage;
         ReloadStats();
     }
 
     public void AddAttackSpeed(float attackSpeed)
     {
-        _statsHandler.attackSpeed = +attackSpeed;
+        _statsHandler.bonusAttackSpeed = +attackSpeed;
         ReloadStats();
     }
     
