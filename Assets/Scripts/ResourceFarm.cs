@@ -11,7 +11,7 @@ public class ResourceFarm : MonoBehaviour
 
     private void Start()
     {
-        _initalSpeed = _playerScript._speed;
+        _initalSpeed = _playerScript.speed; 
     }
 
     private void OnTriggerStay(Collider col)
@@ -20,9 +20,9 @@ public class ResourceFarm : MonoBehaviour
         {
             var tree = col.gameObject.GetComponent<TreeController>();
             tree.TakeDamage(_damagePerSec);
-            _playerScript._speed = _playerSpeedInTree;
+            _playerScript.speed = _playerSpeedInTree; 
         }
-        
+
     }
 
     private void OnTriggerExit(Collider col)
@@ -36,6 +36,6 @@ public class ResourceFarm : MonoBehaviour
 
     public void ResetSpeed()
     {
-        _playerScript._speed = _initalSpeed;
+        _playerScript.speed = _initalSpeed; 
     }
 }
