@@ -7721,7 +7721,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1652380702}
         m_TargetAssemblyTypeName: SpiderController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -7739,7 +7739,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1488285109}
 --- !u!114 &1652380702 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 432238606763253190, guid: 26b9949f52b45d64b912230d2c466879, type: 3}
