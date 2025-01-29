@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8053126202038682062}
   - component: {fileID: 5776042016026221347}
   m_Layer: 5
-  m_Name: Item
+  m_Name: DefaultBonusDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6904020422125102459}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5776042016026221347}
+        m_TargetAssemblyTypeName: ShopCard, Assembly-CSharp
+        m_MethodName: BuyCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5776042016026221347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _woodPrice: 0
-  _goldPrice: 0
+  _goldPrice: 50
   _imageWindow: {fileID: 5458251147346731954}
   _image: {fileID: 21300000, guid: 08ab4386de358e4458a96f28c7fe7749, type: 3}
   _woodPriceText: {fileID: 4055243848340324968}
@@ -147,10 +159,16 @@ MonoBehaviour:
   _cardDescText: {fileID: 1523028084784652748}
   _woodPanel: {fileID: 2738524123939358789}
   _goldPanel: {fileID: 1177933979664365252}
-  _cardName: Test Name
-  _cardDescription: That card does nothing and gives literlly nothing this desc was
-    written just for test
+  _cardName: Bonus Damage
+  _cardDescription: Adds <b>1</b> bonus damage to all your attacks
   _resourceHandler: {fileID: 11400000, guid: 7eb1f71906a682a4385950a4d1a7e284, type: 2}
+  _bonusDamage: 1
+  bonusAttackSpeed: 0
+  additionalPlayerSize: 0
+  bonusMoveSpeed: 0
+  enemyBonusDamage: 0
+  bonusWood: 0
+  bounceImmune: 0
 --- !u!1 &1177933979664365252
 GameObject:
   m_ObjectHideFlags: 0

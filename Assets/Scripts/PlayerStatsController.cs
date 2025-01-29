@@ -76,7 +76,10 @@ public class PlayerStatsController : MonoBehaviour
 
     public void BounceImmune(bool bounceImmune)
     {
-        _statsHandler.bounceImmune = bounceImmune;
+        if (_statsHandler.bounceImmune == false)
+        {
+            _statsHandler.bounceImmune = bounceImmune;
+        }
         ReloadStats();
     }
 }
